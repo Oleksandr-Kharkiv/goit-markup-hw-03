@@ -22,6 +22,8 @@ p,
 ul {
     margin-top: 0;
     margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .container {
@@ -30,14 +32,17 @@ ul {
     width: 1200px;
     padding-left: 15px;
     padding-right: 15px;
-    
-    outline: 2px solid rgb(241, 54, 54); 
 }
 
 .list {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+.foto {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 /* ----------------------------------------шапка--------------- */
@@ -49,12 +54,9 @@ ul {
     
     background-color: var(--text-and-primary-bg-white-color);
 }
-
 .logo {
-    display: block;
-    padding-top: 24px;
-    padding-bottom: 25px;
-
+    display: inline-block;
+       
     color: var(--accent-color);
     font-family: 'Raleway', sans-serif;
     font-weight: 700; 
@@ -70,10 +72,10 @@ ul {
 /*------------------------------------------site nav & hat-right header ------------------*/
 .line {
     display: flex;
-    /* align-items: center; */
 }
-.container .logo-nav {
+.logo-nav {
     display: flex;
+    align-items: center;
 }
 .link {
     color: var(--primary-text-color);
@@ -141,7 +143,11 @@ ul {
 
 .hero-title{
     margin-top: 0;
+    margin-right: auto;
     margin-bottom: 30px;
+    margin-left: auto;
+    width: 696px;
+
     
     color: var(--text-and-primary-bg-white-color);
     font-weight: 900;
@@ -157,6 +163,10 @@ ul {
     display: inline-block;
     border: 1px solid transparent;
     border-radius: 4px;
+    padding-top: 6px;
+    padding-right: 22px;
+    padding-bottom: 6px;
+    padding-left: 22px;
     
     color: var(--title-text-color);
     background-color: var(--buttons-and-bg-color);
@@ -174,7 +184,10 @@ ul {
     border: none;
     border-radius: 4px;
     min-width: 216px;
-    padding: 10px 32px;
+    padding-top: 10px;
+    padding-right: 32px;
+    padding-bottom: 10px;
+    padding-left: 32px;
     
     color: var(--text-and-primary-bg-white-color);
     background-color: var(--accent-color);
@@ -201,10 +214,6 @@ ul {
     padding-top: 94px;
     padding-bottom: 94px;
 }
-.section.top-padding {
-    padding-top: 94px;
-    padding-bottom: 0;
-}
 
 .section-title {
     color: var(--title-text-color);
@@ -227,7 +236,19 @@ ul {
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+.section.excellence {
+    padding-bottom: 0;
+}
+.excellence-list {
+    display: flex;
+    gap: 30px;
+}
+.excllence-item {
+    flex-basis: calc((100% - 90px) / 4);
+}
 .excellence-title {
+    margin-bottom: 10px;
+
     color: var(--title-text-color);
     font-size: 14px;
     line-height: 1.14;
@@ -242,27 +263,60 @@ ul {
     letter-spacing: 0.03em;
 }
 
+/* -----------------------------------------що ми робимо----------- */
+
+.work .section-title {
+    margin-bottom: 50px;
+    text-align: center;
+}
+.work-list {
+    display: flex;
+    gap: 30px;
+}
+.work-item {
+    flex-basis: calc((100% - 60px) / 3);
+}
+
 /* ------------------------------------------команда--------------- */
 
 .team {
     background-color: var(--buttons-and-bg-color);
 }
+.team .section-title {
+    margin-bottom: 50px;
+    text-align: center;
+}
+.team-list {
+    display: flex;
+    gap: 30px;
+}
 .team-card {
+    flex-basis: calc((100% - 90px) / 4);
     background-color: var(--text-and-primary-bg-white-color);
+
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+                0px 1px 1px rgba(0, 0, 0, 0.14), 
+                0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+.team .card-foot {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
 }
 .team-title {
+    margin-bottom: 10px;
+
     color: var(--title-text-color);
     font-weight: 500;
     font-size: 16px;
     line-height: 1.19;
-    text-align: center;
     letter-spacing: 0.03em;
 }
 .team-text {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.19;
-    text-align: center;
     letter-spacing: 0.03em;
 }
 
@@ -270,20 +324,53 @@ ul {
 
 .floor {
     background-color: var(--second-bg-color);
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 .white-studio {
     color: var(--text-and-primary-bg-white-color);
 }
 .contacts {
+    margin-top: 20px;
     font-style: normal;
 }
+.floor .contacts-item +.contacts-item {
+    margin-top: 9px;
+}
 
-/* page portfolio.html */
+/* --------------------------------page Portfolio-------- */
 
+/* ----------------------------------фільтр------------------ */
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 34px;
+}
+.buttons .item +.item {
+    margin-left: 8px;
+}
+/* ----------------------------портфоліо картки-------------------- */
+.portfolio .set-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.portfolio-card {
+    flex-basis: calc((100% - 60px) / 3);
+    border: 1px solid #EEEEEE;
+}
 .portfolio-link { 
     text-decoration: none;
 }
+.portfolio .card-foot {
+    padding-top: 20px;
+    padding-right: 24px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+}
 .portfolio-title {
+    margin-bottom: 4px;
+
     color: var(--title-text-color);
     font-size: 18px;
     line-height: 2;
